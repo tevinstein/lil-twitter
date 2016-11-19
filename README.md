@@ -1,5 +1,7 @@
 # lil-twitter
 
+Just like it's name, lil-twitter is a simpler version of twitter. lil-twitter lets user creates and login account as well as post and delete their tweets.
+
 ##### This is one of my Hacktiv8's project using:
 - Node.js v6+
 - Express
