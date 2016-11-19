@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>lil-twitter</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./libraries/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://use.fontawesome.com/5b4025bff4.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUp" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: rgba(255,255,255,0.9); padding: 10px 10px 5px 10px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" style="color:#5E5F5B;"><span class="fa fa-user"></span> Sign Up</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <form id="sign-up-form">
+                            <div class="col-md-12" style="margin-bottom: 5px">
+                                <input class="form-control" name="email" type="text" placeholder="Enter email">
+                            </div>
+                            <div class="col-md-12" style="margin-bottom: 5px">
+                                <input class="form-control" name="username" type="text" placeholder="Enter username">
+                            </div>
+                            <div class="col-md-12" style="margin-bottom: 5px">
+                                <input class="form-control" name="password" type="password" placeholder="Enter password">
+                            </div>
+                            <div class="col-md-12" style="margin-bottom: 5px">
+                                <input class="form-control" name="avatar" type="text" placeholder="Enter avatar URL">
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" id="sign-up-user-button" onclick="signUp(event)" class="btn btn-default btn-lg btn-block">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signIn" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: rgba(255,255,255,0.9); padding: 10px 10px 5px 10px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" style="color:#5E5F5B;"><span class="fa fa-user"></span> Sign In</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <form id="sign-in-form">
+                            <div class="col-md-12" style="margin-bottom: 5px">
+                                <input class="form-control" name="username" type="text" placeholder="Enter username">
+                            </div>
+                            <div class="col-md-12" style="margin-bottom: 5px">
+                                <input class="form-control" name="password" type="password" placeholder="Enter password">
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" id="sign-in-user-button" onclick="signIn(event)" class="btn btn-default btn-lg btn-block">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div id="main-content">
+        <div class="container">
+            <!-- Alert -->
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3" id="alert-message">
+                </div>
+            </div>
+            <!-- Tweets -->
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1" style="background: rgba(0,0,0,0);">
+                    <h1 style="font-size: 200px;"><span class="fa fa-twitter"></span> lil-twitter</h1>
+                    <br>
+                    <br>
+                    <button class="btn btn-lg btn-default" data-toggle="modal" data-target="#signUp">Create New Account</button>
+                    or
+                    <button class="btn btn-lg btn-default" data-toggle="modal" data-target="#signIn">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./libraries/jquery-3.1.1.min.js"></script>
+<script src="./libraries/jwt-decode.min.js"></script>
+<script src="./libraries/bootstrap.min.js"></script>
+<script type="text/javascript" src="./javascripts/script.tweets.js"></script>
+<script type="text/javascript" src="./javascripts/script.users.js"></script>
+<script>
+    $(document).ready(function(){
+        if(localStorage.getItem('token')){
+            window.location = 'home.html'
+        }
+    })
+</script>
+</html>
